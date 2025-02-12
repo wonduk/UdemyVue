@@ -7,7 +7,7 @@
     </div>
     <div class="form-control">
       <label for="age">Your Age (Years)</label>
-      <input id="age" name="age" type="number" v-model="userAge" ref="ageRef" />
+      <input id="age" name="age" type="number" v-model="userAge" ref="ageRef"/>
     </div>
     <div class="form-control">
       <label for="referrer">How did you hear about us?</label>
@@ -45,6 +45,9 @@
       <div>
         <input id="how-other" name="how" type="radio" value="other" v-model="interest" />
         <label for="how-other">Other</label>
+        <rating-control v-model="rating"></rating-control>
+      </div>
+      <div class="form-control">
       </div>
     </div>
     <div>
@@ -54,7 +57,9 @@
 </template>
 
 <script>
+import RatingControl from './RatingControl.vue';
 export default {
+  components: { RatingControl },
   data() {
     return {
       userName: '',
@@ -63,6 +68,7 @@ export default {
       interest: [],
       how: '',
       userNameValidity: null,
+      rating : 'poor',
     }
   },
 
@@ -72,6 +78,9 @@ export default {
       console.log('userAge: ' + this.userAge);
       console.log('userAge: ' + this.$refs.ageRef.value);
       console.log('referrer: ' + this.referrer);
+      console.log('this.rating: ' + this.rating);
+
+      this.rating = '';
       this.userName = '';
       this.userAge = null;
     },

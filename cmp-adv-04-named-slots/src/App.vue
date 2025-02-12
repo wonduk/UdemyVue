@@ -4,7 +4,7 @@
     <!-- <TheHeader /> -->
     <badge-list></badge-list>
     <user-info :full-name="activeUser.name" :info-text="activeUser.description" :role="activeUser.role"></user-info>
-    <CourseGoals #default="slotProps">
+    <CourseGoals #default="slotProps" test="test">
       <h2>{{ slotProps.item }}</h2>
       <p>{{ slotProps['another-prop'] }}</p>
     </CourseGoals>
@@ -51,7 +51,10 @@ export default {
   methods: {
     setSelectedComponent(cmp) {
       this.selectedComponent = cmp;
-    }
+    },
+    test() {
+
+    },
   }
 };
 </script>

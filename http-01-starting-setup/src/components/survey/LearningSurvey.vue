@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import axios from 'axios'; // at the start of your <script> tag, before 
 export default {
   data() {
     return {
