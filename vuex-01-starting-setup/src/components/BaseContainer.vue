@@ -8,6 +8,16 @@
 <script>
 export default {
   props: ['title'],
+  data() {
+    return {
+    } 
+  },
+  methods: {
+  },
+  mounted() {
+  },
+  created() {
+  }
 };
 </script>
 
